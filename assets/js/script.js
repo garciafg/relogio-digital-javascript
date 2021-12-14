@@ -14,7 +14,7 @@ function atualizaHora(){
     let minutoAtual = agora.getMinutes();
     let segundoAtual = agora.getSeconds();
 
-    hora.innerHTML = horaAtual;
+    hora.innerHTML = horaAtual < 10 ? '0' + horaAtual : horaAtual;
     // Se o minuto for menor que 10, adiciona um zero antes do número
     minuto.innerHTML = minutoAtual < 10 ? '0' + minutoAtual : minutoAtual;
     // Se o segundo for menor que 10, adiciona um zero antes do número
@@ -38,12 +38,12 @@ function mesAno(){
 function boasVindas(){
     let agora = new Date();
     let horaAtual = agora.getHours();
-    if(horaAtual >= 0 && horaAtual < 12){
+    if(horaAtual >= 6 && horaAtual < 12){
         msg.innerHTML = 'Bom dia!';
     }else if(horaAtual >= 12 && horaAtual < 18){
         msg.innerHTML = 'Boa tarde!';
-    }else{
-        msg.innerHTML = 'Boa noite!';
+    }else if(horaAtual >= 0 && horaAtual < 6){
+        msg.innerHTML = 'Bom dia!';
     }
 }
 
